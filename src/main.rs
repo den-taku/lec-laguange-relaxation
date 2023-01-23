@@ -48,7 +48,13 @@ fn main() {
         for i in 0..7 {
             value += u[i] * (coeff[i] as f64)
         }
-        println!("  value: {value}");
+        println!(
+            "  value: {value} -> true value: {}",
+            x.iter()
+                .enumerate()
+                .map(|(i, a)| if *a == 1 { c[i] } else { 0.0 })
+                .sum::<f64>()
+        );
 
         for i in 0..7 {
             let mut ax = 0;
